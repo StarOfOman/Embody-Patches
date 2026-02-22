@@ -1,0 +1,37 @@
+Scene Presets
+Pre-built environments loaded from Enviornments.txt. Each sends a batch of SPWN commands.
+
+Loading Sequence:
+  1. SPWND (clear all objects)
+  2. DL_Int_0 (disable directional light)
+  3. Wait 500ms
+  4. Send each SPWN command with 10ms delay
+
+Available Presets:
+
+Default
+  Clears all objects (SPWND only)
+
+Office (53 objects)
+  Categories: Furnish, Walls, Plants, Trash, Floors, School, LIGHT
+  Office with desks, shelves, books, plants, water cooler, and floor tiles
+
+Clothing Store (122 objects)
+  Categories: Walls, Floors, AC, School, Clothing, Plants, Travel, Furnish, Closet, LIGHT
+  Clothing store with racks, hangers, clothing items, dressers, and display areas
+
+CAVE (17 objects)
+  Categories: Outdoor, CAVE, LIGHT
+  Natural cave environment with rock formations, paths, ferns, and lighting
+
+Sci-Fi Burn Area (58 objects)
+  Categories: Scifi, Burn, LIGHT
+  Sci-fi industrial area with doors, floors, walls, pipes, wells, and colored volumetric lights
+
+Classroom (131 objects)
+  Categories: School, Walls, Doors, Utilities, Plants, Flooring, LIGHT
+  Full classroom with student desks, chairs, teacher desk, wallboards, and decorations
+
+VTuber Room (17 objects)
+  Categories: VTuber, Floors, Walls, LIGHT
+  Streaming setup with desk, chair, monitor, ring lights, microphone, and backdrop

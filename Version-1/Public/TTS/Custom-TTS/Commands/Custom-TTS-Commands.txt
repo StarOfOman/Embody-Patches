@@ -1,0 +1,17 @@
+TTS_BYOB_{cloudinaryUrl}_{mood}_{intensity} - Sends a user-uploaded audio file URL to UE for MetaHuman lip-sync playback - POST
+Format: TTS_BYOB_{url}_{mood}_{intensity}
+
+Flow:
+1. User uploads mp3, mp4, wav (max 50MB)
+2. File is validated client-side (extension + audio decode check)
+3. File is uploaded to Cloudinary (video/upload endpoint)
+4. Cloudinary returns a secure URL
+5. Frontend sends TTS_BYOB_{url}_{mood}_{intensity} to UE via DataChannel
+6. UE downloads the audio from the URL and plays it with lip-sync
+
+Accepted file types: .mp3, .wav, .mp4
+Max file size: 50MB
+
+UE responds with:
+TTS_Started - Avatar began speaking - GET
+TTS_Complete - Avatar finished speaking - GET

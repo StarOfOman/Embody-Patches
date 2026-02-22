@@ -1,0 +1,34 @@
+{
+  "api": "Custom TTS (BYOB)",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "upload": {
+    "provider": "Cloudinary",
+    "endpoint": "https://api.cloudinary.com/v1_1/{cloudName}/video/upload",
+    "acceptedTypes": [".mp3", ".wav", ".ogg", ".m4a", ".aac", ".mp4"],
+    "maxFileSize": "50MB",
+    "validation": "Client-side extension check + AudioContext decode verification"
+  },
+  "endpoints": {
+    "POST": [
+      {
+        "command": "TTS_BYOB_{cloudinaryUrl}_{mood}_{intensity}",
+        "description": "Sends a user-uploaded audio URL to UE for MetaHuman lip-sync playback",
+        "params": {
+          "cloudinaryUrl": "string - Cloudinary secure URL of the uploaded audio",
+          "mood": "string - emotion label (default: Neutral)",
+          "intensity": "number - emotion intensity 0.0-1.0 (default: 0.5)"
+        }
+      }
+    ],
+    "GET": [
+      {
+        "command": "TTS_Started",
+        "description": "UE notifies frontend that the avatar has begun speaking"
+      },
+      {
+        "command": "TTS_Complete",
+        "description": "UE notifies frontend that the avatar has finished speaking"
+      }
+    ]
+  }
+}

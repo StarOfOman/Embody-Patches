@@ -1,0 +1,45 @@
+{
+  "api": "Scene Presets",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Pre-built environment presets parsed from Enviornments.txt. Loading a preset first sends SPWND (clear all) and DL_Int_0, then sends each SPWN command sequentially with 10ms delay between commands.",
+  "presets": {
+    "Default": {
+      "description": "Clear all objects from the world",
+      "commands": ["SPWND"]
+    },
+    "Office": {
+      "description": "Office environment with desks, shelves, books, plants, water cooler, and floor tiles",
+      "object_count": 53,
+      "categories_used": ["Furnish", "Walls", "Plants", "Trash", "Floors", "School", "LIGHT"]
+    },
+    "Clothing Store": {
+      "description": "Clothing store with racks, hangers, clothing items, dressers, and display areas",
+      "object_count": 122,
+      "categories_used": ["Walls", "Floors", "AC", "School", "Clothing", "Plants", "Travel", "Furnish", "Closet", "LIGHT"]
+    },
+    "CAVE": {
+      "description": "Natural cave environment with rock formations, paths, ferns, and ambient lighting",
+      "object_count": 17,
+      "categories_used": ["Outdoor", "CAVE", "LIGHT"]
+    },
+    "Sci-Fi Burn Area": {
+      "description": "Sci-fi industrial area with doors, floors, walls, wedges, pipes, wells, and colored volumetric lights",
+      "object_count": 58,
+      "categories_used": ["Scifi", "Burn", "LIGHT"]
+    },
+    "Classroom": {
+      "description": "Full classroom with student desks and chairs, teacher's desk, wallboards, bookshelves, decorations, and overhead lighting",
+      "object_count": 131,
+      "categories_used": ["School", "Walls", "Doors", "Utilities", "Plants", "Flooring", "LIGHT"]
+    },
+    "VTuber Room": {
+      "description": "VTuber streaming setup with desk, chair, monitor, ring lights, microphone, backdrop, and floor/wall tiles",
+      "object_count": 17,
+      "categories_used": ["VTuber", "Floors", "Walls", "LIGHT"]
+    }
+  },
+  "notes": {
+    "loading_sequence": "1) Send SPWND to clear all objects, 2) Send DL_Int_0 to disable directional light, 3) Wait 500ms, 4) Send each SPWN command with 10ms delay",
+    "source_file": "Enviornments.txt - can be extended by appending new [PresetName] sections with SPWN commands"
+  }
+}
